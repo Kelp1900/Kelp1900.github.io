@@ -153,15 +153,6 @@
     .profile-container { flex-direction: column-reverse; text-align: center; }
     .profile-pic { text-align: center; margin-bottom: 15px; }
   }
-
-  /* --- hovering style --- */
-  details > summary { list-style: none; }
-  details > summary::-webkit-details-marker { display: none; }
-  .hover-img { position: absolute; top: 35px; left: 20px; width: 600px; max-width: 90vw; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; z-index: 100; pointer-events: none; }
-  details { margin-bottom: 15px; border-bottom: 1px solid #555; padding-bottom: 10px; }
-  summary { font-size: 1.1em; font-weight: bold; outline: none; cursor: pointer; position: relative; transition: color 0.3s ease; }
-  summary:hover { color: #507b58; }
-  summary:hover .hover-img { opacity: 1; visibility: visible; transform: translateY(0); }
 </style>
 <div class="profile-container">
   <div class="profile-text">
@@ -181,9 +172,9 @@
   .hover-img {
     position: absolute;
     top: 35px;
-    left: 20px;
+    right: 0; /* 【修改点：靠右对齐】 */
     width: 700px;
-    Max-width: 90vw;
+    max-width: 90vw;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -198,14 +189,17 @@
   details { margin-bottom: 15px; border-bottom: 1px solid #555; padding-bottom: 10px; }
   summary { font-size: 1.1em; font-weight: bold; outline: none; cursor: pointer; position: relative; transition: color 0.3s ease; }
   summary:hover { color: #507b58; }
-  summary:hover .hover-img { opacity: 1; visibility: visible; transform: translateY(0); }
+  
+  /* 【修改点：精确限制触发区域】 */
+  .hover-trigger:hover .hover-img { opacity: 1; visibility: visible; transform: translateY(0); }
 </style>
 <details>
   <summary>
     ‣ Carbon sink-source coordination in birch under root-zone cooling: is phloem loading the main bottleneck? (submitted 30.10.2026)
-    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help;">
+    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help; display: inline-block; margin-left: 5px;">
       (mainplot)
-    <img class="hover-img" src="Figure1.png" alt="Graphical Abstract">
+      <img class="hover-img" src="Figure1.png" alt="Graphical Abstract">
+    </span>
   </summary>
   <div style="padding-top: 15px; color: #888;">
     <p><strong>Core Insight:</strong> By combining stable isotope tracing, hydraulic status monitoring, source photosynthesis & NSC measurements, and advanced statistical modelling, this study reveals how phloem loading acts as the primary bottleneck for carbon source-sink coordination under root-zone chilling stress.</p>
@@ -215,9 +209,10 @@
 <details>
   <summary>
     ‣ Caught between two states: The compromise in acclimation of photosynthesis, transpiration and mesophyll conductance to different amplitudes of fluctuating irradiance (2024)
-    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help;">
+    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help; display: inline-block; margin-left: 5px;">
       (mainplot)
-    <img class="hover-img" src="Figure2.png" alt="Leaf Abstract">
+      <img class="hover-img" src="Figure2.png" alt="Leaf Abstract">
+    </span>
   </summary>
   <div style="padding-top: 15px; color: #888;">
     <p><strong>Core Insight:</strong> This study explores the physiological trade-offs and acclimation mechanisms among photosynthesis, transpiration, and mesophyll conductance under fluctuating irradiance of varying amplitudes.</p>
@@ -227,9 +222,10 @@
 <details>
   <summary>
     ‣ A case of long-term herbivory: specialized feeding trace on <em>Parrotia</em> (Hamamelidaceae) plant species (2020)
-    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help;">
+    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help; display: inline-block; margin-left: 5px;">
       (mainplot)
-    <img class="hover-img" src="Figure3.png" alt="Graphical Abstract 3">
+      <img class="hover-img" src="Figure3.png" alt="Graphical Abstract 3">
+    </span>
   </summary>
   <div style="padding-top: 15px; color: #888;">
     <p><strong>Core Insight:</strong> This research documents specialized feeding traces on <em>Parrotia</em> species, providing historical evidence for long-term plant-insect herbivory interactions and advancing our understanding of paleoecology.</p>
@@ -239,9 +235,10 @@
 <details>
   <summary>
     ‣ Characterization of the complete chloroplast genome sequence of <em>Ulmus chenmoui</em> (Ulmaceae), an endangered plant endemic to China  (2019)
-    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help;">
+    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help; display: inline-block; margin-left: 5px;">
       (mainplot)
-    <img class="hover-img" src="Figure4.png" alt="Graphical Abstract 4">
+      <img class="hover-img" src="Figure4.png" alt="Graphical Abstract 4">
+    </span>
   </summary>
   <div style="padding-top: 15px; color: #888;">
     <p><strong>Core Insight:</strong> By mapping the complete chloroplast genome of the endangered endemic plant <em>Ulmus chenmoui</em>, this study provides crucial genetic resources for conservation biology and phylogenetic research.</p>
@@ -251,16 +248,16 @@
 <details>
   <summary>
     ‣ Expression analysis of microRNAs and mRNAs in ovarian granulosa cells after microcystin-LR exposure (2017)
-    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help;">
+    <span class="hover-trigger" style="color: #507b58; font-size: 0.9em; cursor: help; display: inline-block; margin-left: 5px;">
       (mainplot)
-    <img class="hover-img" src="Figure5.png" alt="Graphical Abstract 5">
+      <img class="hover-img" src="Figure5.png" alt="Graphical Abstract 5">
+    </span>
   </summary>
   <div style="padding-top: 15px; color: #888;">
     <p><strong>Core Insight:</strong> This toxicological analysis reveals how microcystin-LR exposure alters the expression profiles of microRNAs and mRNAs, highlighting potential molecular mechanisms underlying reproductive toxicity.</p>
     <p>🔗 <strong>DOI:</strong> <a href="https://doi.org/10.1016/j.toxicon.2017.01.022" target="_blank" style="color: #507b58; font-weight: bold; text-decoration: none;">10.1016/j.toxicon.2017.01.022</a></p>
   </div>
 </details>
-
 
 </div>
     </main>
